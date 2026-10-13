@@ -1,0 +1,74 @@
+
+body {
+    animation: change-color 5s infinite alternate;
+    background-color: #ad2727;
+}
+
+@keyframes change-color {
+    from {
+        background-color: aquamarine;
+    }
+    to {
+        background-color: rgb(2, 66, 87);
+    }
+}
+.title {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    text-align: center;
+    margin: 50px auto;
+    animation: skew 5s infinite alternate;
+}
+
+@keyframes skew {
+    0% {transform: skewX(0deg, 0deg);}
+    100% {transform: skewX(30deg, 30deg);}
+}
+.square {
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 50px auto;
+    transition: all 0.3s ease;
+}
+
+.square:hover {
+    background-color: lightblue;
+    transform: rotate(30deg);
+}
+
+.button-div {
+    text-align: center;
+}
+
+.button {
+    background-color: lightgray;
+    border: 2px solid #ccc;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    margin: 50px auto;
+    display: inline-block;
+    width: 100px;
+    transition: all. 5s;
+}
+
+.button:hover {
+    background-color: #d417ed;
+    color: rgb(12, 1, 1);
+    transform:scale(1.5);
+}
+
+.loading{
+    background-color: rgb(13, 166, 31);
+    animation: stretch 5s infinite alternate;
+
+    
+}
+
+@keyframes stretch {
+
+    0% {width: 100px;}
+    100% {width: 100vw;}
+}

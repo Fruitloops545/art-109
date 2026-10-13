@@ -1,0 +1,102 @@
+/*CSS resets*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/* respecting user font size preferences */
+html {
+    font-size: 100%;
+}
+
+/* General CSS*/
+body {
+    background-color: #f899f9;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+
+
+header {
+    padding: 6rem;
+    margin-bottom: 3rem;
+    background-color: #f4d796;
+    background: #3F5EFB;
+background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    border-bottom: 2px solid #070101;
+    border-radius: 1rem;
+    text-align: center;
+
+
+
+}
+
+header h1 {
+    font-size: 3.125rem;
+    margin-bottom: 1.25rem;
+}
+
+main {
+   
+}
+
+.about-section, .contact-section {
+    margin-bottom: 5rem;
+}
+
+.about-section h2, .portfolio-section, .contact-section {
+ max-width: 60rem;
+    margin: 2rem auto;
+    padding: 2rem;
+} 
+
+
+.about-section h2, .portfolio-section, .contact-section {
+ margin: 2rem auto;
+}
+
+
+.portfolio-section {
+    margin-bottom: 5rem;
+    background-color: aquamarine;
+    padding: 4rem;
+    text-align: justify;
+    border-radius: 5rem;
+
+}
+
+.portfolio-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5rem; 
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border: 2px solid #070101;
+
+}
+
+.portfolio-section h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-section p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.about-section {
+background-color: rgb(234, 244, 253);
+}
+
+
+
+footer {
+    background-color: #68244d;
+    color: #fff;
+    text-align: end;
+    padding: 1.2rem;
+}
