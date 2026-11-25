@@ -1,4 +1,4 @@
-let images = ["Screenshot 2023-10-10 103456.png"]
+let images = ["images/images1.jpeg", "images/images2.jpeg", "images/images3.jpeg"];
 
 let currentImageIndex = 0;
 
