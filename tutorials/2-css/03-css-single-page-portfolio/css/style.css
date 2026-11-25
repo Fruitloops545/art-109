@@ -12,12 +12,11 @@ html {
 
 /* General CSS*/
 body {
-    background-color: #f899f9;
+    background-color: #f379c4;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.3rem;
     line-height: 1.6;
 }
-
 
 
 header {
@@ -39,6 +38,18 @@ header h1 {
     margin-bottom: 1.25rem;
 }
 
+nav a {
+    text-decoration: dotted underline;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.25rem;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    background-color: #90c5df;
+    text-decoration: none;
+}
 main {
    
 }
@@ -61,10 +72,7 @@ main {
 
 .portfolio-section {
     margin-bottom: 5rem;
-    background-color: aquamarine;
-    padding: 4rem;
-    text-align: justify;
-    border-radius: 5rem;
+
 
 }
 
@@ -99,4 +107,7 @@ footer {
     color: #fff;
     text-align: end;
     padding: 1.2rem;
-}
+
+
+    
+    }
