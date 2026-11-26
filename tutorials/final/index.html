@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZONE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ZONE OUT</h1>
+        <h2>CHOOSE YOUR REALITY</h2>
+    </header>
+        <div class="doors-container">
+
+    <div class="door-frame">
+        <div class="figure-room">
+    <div class="shadow-figure">
+        <div class="figure-head">
+            <span class="glowing-eye"></span>
+            <span class="glowing-eye"></span>
+        </div>
+        <div class="figure-body"></div>
+        <div class="figure-arm left-arm"></div>
+        <div class="figure-arm right-arm"></div>
+        <div class="figure-leg left-leg"></div>
+        <div class="figure-leg right-leg"></div>
+    </div>
+</div>
+
+        <button class="door" type="button"
+            aria-label="Open door 1"
+            onclick="this.classList.toggle('open')">
+
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="doorknob"></span>
+
+        </button>
+    </div>
+
+    <div class="door-frame">
+
+        <div class="fear-room">
+
+    <div class="eyes">
+
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+
+    </div>
+
+    <p>You are not alone.</p>
+
+</div>
+
+
+
+        <button class="door" type="button"
+            aria-label="Open door 2"
+            onclick="this.classList.toggle('open')">
+
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="doorknob"></span>
+
+        </button>
+    </div>
+
+    <div class="door-frame">
+        <div class="time-room">
+
+    <div class="clock">
+        <span class="twelve">12</span>
+        <span class="three">3</span>
+        <span class="six">6</span>
+        <span class="nine">9</span>
+
+        <div class="hour-hand"></div>
+        <div class="minute-hand"></div>
+        <div class="second-hand"></div>
+    </div>
+
+    <p>Time is an illusion.</p>
+
+</div>
+        <button class="door" type="button"
+            aria-label="Open door 3"
+            onclick="this.classList.toggle('open')">
+
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="doorknob"></span>
+
+        </button>
+    </div>
+
+
+
+<div class="door-frame">
+    <div class="reality-room">
+    <div class="spiral"></div>
+    <p>Nothing is what it seems.</p>
+</div>
+        <button class="door" type="button"
+            aria-label="Open door 4"
+            onclick="this.classList.toggle('open')">
+
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="panel"></span>
+            <span class="doorknob"></span>
+
+        </button>
+    </div>
+</div>
+    <script>
+
+document.addEventListener("mousemove", function(event) {
+
+    document.querySelectorAll(".eye").forEach(function(eye) {
+
+        const pupil = eye.querySelector(".pupil");
+        const rect = eye.getBoundingClientRect();
+
+        const x = event.clientX - rect.left - rect.width / 2;
+        const y = event.clientY - rect.top - rect.height / 2;
+
+        const angle = Math.atan2(y, x);
+
+        pupil.style.transform =
+            `translate(${Math.cos(angle) * 10}px,
+                       ${Math.sin(angle) * 5}px)`;
+
+    });
+
+});
+
+</script>
+<div id="alone-message">you're alone</div>
+<div id="time-vortex"></div>
+
+<div id="time-message">
+    There is no tomorrow.
+</div>
+
+<div id="endless-frames"></div>
+
+<div id="try-again">
+    Try again.
+</div>
+
+<div id="reality-message">
+    You were never in control.
+</div>
+
+<div id="watching-message">
+    they are always watching
+</div>
+
+<div id="giant-eyes">
+    <div class="eye">
+        <div class="pupil"></div>
+    </div>
+
+    <div class="eye">
+        <div class="pupil"></div>
+    </div>
+</div>
+<button id="reset-reality" onclick="location.reload()">
+    RETURN TO REALITY
+</button>
+
+<!-- Door Sound Effects -->
+
+<audio id="loneliness-sound" src="sounds/loneliness.mp3" loop></audio>
+
+<audio id="fear-sound" src="sounds/whispers.mp3" loop></audio>
+
+<audio id="time-sound" src="sounds/clock.mp3" loop></audio>
+
+<audio id="slam-sound" src="sounds/door-slam.mp3"></audio>
+
+<audio id="locked-sound" src="sounds/locked-door.mp3"></audio>
+
+<audio id="loneliness-sound" src="sounds/door1.mp3" loop></audio>
+
+<div id="star-cursor">✦</div>
+
+<script>
+    const starCursor = document.getElementById("star-cursor");
+
+    document.addEventListener("mousemove", function(event) {
+        starCursor.style.left = event.clientX + "px";
+        starCursor.style.top = event.clientY + "px";
+    });
+</script>
+
+<script>
+    const firstDoor = document.querySelector(".door");
+
+    firstDoor.addEventListener("click", function() {
+        document.getElementById("loneliness-sound").play();
+        setTimeout(function() {
+            if (firstDoor.classList.contains("open")) {
+                document.body.classList.add("alone");
+            }
+        }, 3500);
+    });
+</script>
+<script>
+    const secondDoor = document.querySelectorAll(".door")[1];
+
+    secondDoor.addEventListener("click", function() {
+        setTimeout(function() {
+            if (secondDoor.classList.contains("open")) {
+                document.body.classList.add("watched");
+            }
+        }, 2500);
+    });
+</script>
+
+<script>
+    document.addEventListener("mousemove", function(event) {
+
+        document.querySelectorAll("#giant-eyes .eye").forEach(function(eye) {
+
+            const rect = eye.getBoundingClientRect();
+
+            const angle = Math.atan2(
+                event.clientY - (rect.top + rect.height / 2),
+                event.clientX - (rect.left + rect.width / 2)
+            );
+
+            const pupil = eye.querySelector(".pupil");
+
+            const x = Math.cos(angle) * rect.width * 0.18;
+            const y = Math.sin(angle) * rect.height * 0.15;
+
+            const shakeX = Math.random() * 20 - 10;
+            const shakeY = Math.random() * 20 - 10;
+
+            pupil.style.transform =
+                `translate(${x + shakeX}px, ${y + shakeY}px)`;
+
+        });
+
+    });
+</script>
+
+<script>
+    const thirdDoor = document.querySelectorAll(".door")[2];
+    const timeVortex = document.getElementById("time-vortex");
+
+    const numerals = [
+        "XII", "I", "II", "III",
+        "IV", "V", "VI", "VII",
+        "VIII", "IX", "X", "XI"
+    ];
+
+    for (let i = 0; i < 13; i++) {
+
+        const ring = document.createElement("div");
+
+        ring.className = "time-ring";
+
+        ring.style.setProperty("--delay", (-i * 7 / 13) + "s");
+
+        let clock = `
+            <svg viewBox="0 0 100 100" width="100%">
+                <circle cx="50" cy="50" r="48"
+                    fill="none" stroke="white"/>
+
+                <circle cx="50" cy="50" r="40"
+                    fill="none" stroke="gray"/>
+        `;
+
+        numerals.forEach(function(number, index) {
+
+            const angle = index * Math.PI / 6;
+
+            const x = 50 + 34 * Math.sin(angle);
+            const y = 52 - 34 * Math.cos(angle);
+
+            clock += `
+                <text x="${x}" y="${y}"
+                    fill="white"
+                    font-size="6"
+                    font-family="Georgia"
+                    text-anchor="middle">
+                    ${number}
+                </text>
+            `;
+        });
+
+        clock += "</svg>";
+
+        ring.innerHTML = clock;
+        timeVortex.appendChild(ring);
+    }
+
+    thirdDoor.addEventListener("click", function() {
+        setTimeout(function() {
+            if (thirdDoor.classList.contains("open")) {
+                document.body.classList.add("trapped");
+            }
+        }, 2500);
+    });
+</script>
+
+<script>
+
+const fourthDoor = document.querySelectorAll(".door")[3];
+const fourthFrame = fourthDoor.closest(".door-frame");
+
+const endlessFrames = document.getElementById("endless-frames");
+const tryAgain = document.getElementById("try-again");
+const realityMessage = document.getElementById("reality-message");
+
+let realityAttempts = 0;
+let realityBusy = false;
+
+// Replace the original click behavior for Door 4 only
+
+fourthDoor.removeAttribute("onclick");
+
+fourthDoor.addEventListener("click", function() {
+
+    if (realityBusy) return;
+
+    realityBusy = true;
+    realityAttempts++;
+
+    // First attempt: reveal the spiral
+
+    if (realityAttempts === 1) {
+
+        fourthDoor.classList.add("open");
+
+        setTimeout(function() {
+
+            document.body.classList.add("endless");
+
+        }, 1500);
+
+        // Automatically shut the door
+
+        setTimeout(function() {
+
+            fourthDoor.classList.add("slam");
+            fourthDoor.classList.remove("open");
+
+            setTimeout(function() {
+
+                tryAgain.classList.add("visible");
+                realityBusy = false;
+
+            }, 400);
+
+        }, 3500);
+
+    } else {
+
+        // The door stays closed
+
+        tryAgain.classList.remove("visible");
+
+        // Create another doorway
+
+        const frame = document.createElement("div");
+
+        frame.className = "endless-frame";
+
+        endlessFrames.appendChild(frame);
+
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+
+                const frames = endlessFrames.querySelectorAll(".endless-frame");
+
+                frames.forEach(function(item, index) {
+
+                    const depth = frames.length - index;
+
+                    item.style.width =
+                        160 * Math.pow(1.48, depth) + "px";
+
+                    item.style.height =
+                        280 * Math.pow(1.48, depth) + "px";
+
+                    item.style.opacity =
+                        Math.max(0.06, 1 - depth * 0.14);
+
+                });
+
+            });
+        });
+
+        // Create the illusion of moving forward
+
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            fourthFrame.animate([
+
+                {
+                    transform: "translate(-50%, -50%) scale(0.65)"
+                },
+
+                {
+                    transform: "translate(-50%, -50%) scale(1)"
+                }
+
+            ], {
+                duration: 800,
+                easing: "ease-out"
+            });
+        }
+
+        setTimeout(function() {
+
+            tryAgain.classList.add("visible");
+
+            realityBusy = false;
+
+            // Reveal the final message
+
+            if (realityAttempts >= 5) {
+
+                realityMessage.classList.add("visible");
+
+            }
+
+        }, 850);
+
+        // Remove old frames to keep the website running smoothly
+
+        if (endlessFrames.children.length > 12) {
+            endlessFrames.firstElementChild.remove();
+        }
+
+    }
+
+});
+
+</script>
+
+<script>
+
+const soundDoors = document.querySelectorAll(".door");
+
+// Door 1 - Loneliness
+
+soundDoors[0].addEventListener("click", function() {
+    document.getElementById("loneliness-sound").play();
+});
+
+// Door 2 - Fear
+
+soundDoors[1].addEventListener("click", function() {
+    document.getElementById("fear-sound").play();
+});
+
+// Door 3 - Time
+
+soundDoors[2].addEventListener("click", function() {
+    document.getElementById("time-sound").play();
+});
+
+</script>
+
+</body>
+</html>
